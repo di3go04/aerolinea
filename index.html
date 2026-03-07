@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroVia – Resultados de vuelos Cúcuta ✈ Bogotá</title>
+    <meta name="description" content="Vuelos baratos de Cúcuta a Bogotá. Compara precios y reserva con AeroVia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================================
+     NAVBAR
+===================================================================== -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="logo">
+                <svg class="logo-bird" viewBox="0 0 52 40" fill="none">
+                    <path d="M8 34 C14 22 22 14 30 10 L46 4 L42 14 C36 16 28 22 22 30 Z" fill="white" />
+                    <path d="M6 36 L22 30 L20 36 Z" fill="rgba(255,255,255,.5)" />
+                    <path d="M42 14 L46 4 L50 10 Z" fill="rgba(255,255,255,.65)" />
+                </svg>
+                <span>AeroVia</span>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#" class="nav-item active">RESERVAR</a>
+                <a href="#" class="nav-item">CHECK-IN</a>
+                <a href="#" class="nav-item">ESTADO DEL VUELO</a>
+            </nav>
+            <div class="nav-utils">
+                <button class="util-btn">
+                    <svg viewBox="0 0 24 24" width="13" height="13" stroke="white" stroke-width="2" fill="none">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" />
+                    </svg>
+                    ES-CO
+                </button>
+                <button class="util-btn icon-only" aria-label="Buscar">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="white" stroke-width="2" fill="none">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                </button>
+                <a href="#" class="btn-login">INICIAR SESIÓN</a>
+            </div>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+     HERO
+===================================================================== -->
+    <main>
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <div class="booking-widget glass">
+                    <!-- Tabs -->
+                    <div class="widget-tabs">
+                        <button class="wtab active">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                                <path
+                                    d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+                            </svg>
+                            Vuelos
+                        </button>
+                        <button class="wtab">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                                <path
+                                    d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z" />
+                            </svg>
+                            Hotel + Vuelo
+                        </button>
+                        <button class="wtab">Multidestino</button>
+                    </div>
+
+                    <!-- Trip type -->
+                    <div class="trip-toggle-bar">
+                        <label class="radio-pill"><input type="radio" name="trip" value="r" checked> Ida y
+                            Vuelta</label>
+                        <label class="radio-pill"><input type="radio" name="trip" value="o"> Solo Ida</label>
+                        <label class="radio-pill"><input type="radio" name="trip" value="m"> Multidestino</label>
+                    </div>
+
+                    <!-- Form -->
+                    <form class="search-form" id="search-form" novalidate>
+
+                        <!-- Route row -->
+                        <div class="form-band route-band">
+                            <div class="form-field airport-field" id="field-origen">
+                                <div class="field-lbl">
+                                    <svg viewBox="0 0 24 24" width="12" height="12" fill="#E1251B">
+                                        <path
+                                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                    </svg>
+                                    ORIGEN
+                                </div>
+                                <div class="airport-selector" id="airport-origen" data-value="CUC">
+                                    <div class="ap-selected">
+                                        <span class="ap-city">Cúcuta</span>
+                                        <span class="ap-code">CUC</span>
+                                        <svg class="ap-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none"
+                                            stroke="#9E9E9E" stroke-width="2">
+                                            <polyline points="6 9 12 15 18 9" />
+                                        </svg>
+                                    </div>
+                                    <div class="ap-dropdown" id="ap-drop-origen">
+                                        <div class="ap-search-wrap">
+                                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#9E9E9E"
+                                                stroke-width="2">
+                                                <circle cx="11" cy="11" r="8" />
+                                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                            </svg>
+                                            <input type="text" class="ap-search"
+                                                placeholder="Buscar ciudad o aeropuerto..." id="ap-search-origen">
+                                        </div>
+                                        <div class="ap-list" id="ap-list-origen"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="swap-btn" id="swap-btn">
+                                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="white"
+                                    stroke-width="2.5">
+                                    <path d="M7 16V4m0 0L3 8m4-4l4 4M17 8v12m0 0l4-4m-4 4l-4-4" />
+                                </svg>
+                            </button>
+
+                            <div class="form-field airport-field" id="field-destino">
+                                <div class="field-lbl">
+                                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#9E9E9E"
+                                        stroke-width="2">
+                                        <circle cx="11" cy="11" r="8" />
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                    </svg>
+                                    DESTINO
+                                </div>
+                                <div class="airport-selector" id="airport-destino" data-value="BOG">
+                                    <div class="ap-selected">
+                                        <span class="ap-city">Bogotá</span>
+                                        <span class="ap-code">BOG</span>
+                                        <svg class="ap-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none"
+                                            stroke="#9E9E9E" stroke-width="2">
+                                            <polyline points="6 9 12 15 18 9" />
+                                        </svg>
+                                    </div>
+                                    <div class="ap-dropdown" id="ap-drop-destino">
+                                        <div class="ap-search-wrap">
+                                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#9E9E9E"
+                                                stroke-width="2">
+                                                <circle cx="11" cy="11" r="8" />
+                                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                            </svg>
+                                            <input type="text" class="ap-search"
+                                                placeholder="Buscar ciudad o aeropuerto..." id="ap-search-destino">
+                                        </div>
+                                        <div class="ap-list" id="ap-list-destino"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dates row -->
+                        <div class="form-band details-band">
+                            <div class="form-field calendar-field" id="field-fechas">
+                                <div class="field-lbl">
+                                    <svg viewBox="0 0 24 24" width="12" height="12" fill="#E1251B">
+                                        <path
+                                            d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z" />
+                                    </svg>
+                                    FECHAS
+                                </div>
+                                <div class="field-val dates-val" id="dates-val">
+                                    <span class="date-a sel-date">15 MAR.</span>
+                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#9E9E9E"
+                                        stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                        <polyline points="12 5 19 12 12 19" />
+                                    </svg>
+                                    <span class="date-b sel-date">22 MAR.</span>
+                                </div>
+
+                                <!-- CALENDAR POPUP -->
+                                <div class="cal-popup active" id="cal-popup">
+                                    <div class="cal-header">
+                                        <button type="button" class="cal-nav">‹</button>
+                                        <span class="cal-month">Marzo 2026</span>
+                                        <button type="button" class="cal-nav">›</button>
+                                    </div>
+                                    <div class="cal-grid">
+                                        <div class="cal-dow">Do</div>
+                                        <div class="cal-dow">Lu</div>
+                                        <div class="cal-dow">Ma</div>
+                                        <div class="cal-dow">Mi</div>
+                                        <div class="cal-dow">Ju</div>
+                                        <div class="cal-dow">Vi</div>
+                                        <div class="cal-dow">Sa</div>
+                                        <!-- Blanks for march start (Sunday=0 → March 1 = Sunday) -->
+                                        <div class="cal-day past">1</div>
+                                        <div class="cal-day past">2</div>
+                                        <div class="cal-day past">3</div>
+                                        <div class="cal-day past">4</div>
+                                        <div class="cal-day past">5</div>
+                                        <div class="cal-day past">6</div>
+                                        <div class="cal-day past">7</div>
+                                        <div class="cal-day past">8</div>
+                                        <div class="cal-day past">9</div>
+                                        <div class="cal-day past">10</div>
+                                        <div class="cal-day past">11</div>
+                                        <div class="cal-day past">12</div>
+                                        <div class="cal-day past">13</div>
+                                        <div class="cal-day past">14</div>
+                                        <div class="cal-day sel-start" id="cal-15">15</div>
+                                        <div class="cal-day in-range">16</div>
+                                        <div class="cal-day in-range">17</div>
+                                        <div class="cal-day in-range">18</div>
+                                        <div class="cal-day in-range">19</div>
+                                        <div class="cal-day in-range">20</div>
+                                        <div class="cal-day in-range">21</div>
+                                        <div class="cal-day sel-end" id="cal-22">22</div>
+                                        <div class="cal-day">23</div>
+                                        <div class="cal-day">24</div>
+                                        <div class="cal-day">25</div>
+                                        <div class="cal-day">26</div>
+                                        <div class="cal-day">27</div>
+                                        <div class="cal-day">28</div>
+                                        <div class="cal-day">29</div>
+                                        <div class="cal-day">30</div>
+                                        <div class="cal-day">31</div>
+                                    </div>
+                                    <div class="cal-footer">
+                                        <button type="button" class="cal-confirm-btn" id="cal-confirm">Confirmar
+                                            fechas</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pasajeros -->
+                            <div class="form-field pax-field" id="field-pax">
+                                <div class="field-lbl">
+                                    <svg viewBox="0 0 24 24" width="12" height="12" fill="#E1251B">
+                                        <path
+                                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                    </svg>
+                                    PASAJEROS
+                                </div>
+                                <div class="field-val pax-val" id="pax-val">1 Adulto, 0 Niños</div>
+
+                                <div class="pax-dropdown" id="pax-dropdown">
+                                    <div class="pax-row">
+                                        <div class="pax-info">
+                                            <span class="pax-type">Adultos</span>
+                                            <span class="pax-hint">+12 años</span>
+                                        </div>
+                                        <div class="pax-counter">
+                                            <button type="button" class="pax-btn minus" data-t="adults">−</button>
+                                            <span class="pax-count" id="cnt-adults">1</span>
+                                            <button type="button" class="pax-btn plus" data-t="adults">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="pax-row">
+                                        <div class="pax-info">
+                                            <span class="pax-type">Niños</span>
+                                            <span class="pax-hint">2–11 años</span>
+                                        </div>
+                                        <div class="pax-counter">
+                                            <button type="button" class="pax-btn minus" data-t="children">−</button>
+                                            <span class="pax-count" id="cnt-children">0</span>
+                                            <button type="button" class="pax-btn plus" data-t="children">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="pax-row">
+                                        <div class="pax-info">
+                                            <span class="pax-type">Bebés</span>
+                                            <span class="pax-hint">&lt; 2 años</span>
+                                        </div>
+                                        <div class="pax-counter">
+                                            <button type="button" class="pax-btn minus" data-t="infants">−</button>
+                                            <span class="pax-count" id="cnt-infants">0</span>
+                                            <button type="button" class="pax-btn plus" data-t="infants">+</button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="pax-confirm-btn" id="pax-confirm">Confirmar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="cta-band">
+                            <div class="trip-opts-left">
+                                <label class="check-label">
+                                    <input type="checkbox" id="chk-flex"> Fechas flexibles
+                                </label>
+                                <label class="check-label">
+                                    <input type="checkbox" id="chk-promo" checked> Solo tarifas promocionales
+                                </label>
+                            </div>
+                            <button type="submit" class="btn-search-big pressed" id="btn-buscar">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white"
+                                    stroke-width="2.5">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                </svg>
+                                BUSCAR VUELOS
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="quick-links-bar">
+                        <span class="ql-label">Populares:</span>
+                        <a href="#" class="ql-link">Bogotá</a>
+                        <a href="#" class="ql-link">Medellín</a>
+                        <a href="#" class="ql-link">Cancún</a>
+                        <a href="#" class="ql-link">Miami</a>
+                        <a href="#" class="ql-link">Madrid</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+     RESULTADOS DE VUELO
+===================================================================== -->
+        <section class="results-section" id="resultados">
+            <div class="results-inner">
+                <div class="results-header">
+                    <div>
+                        <h2 class="results-title">Resultados de Vuelo</h2>
+                        <p class="results-subtitle">
+                            <strong>Cúcuta (CUC)</strong>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#E1251B"
+                                stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                            <strong>Bogotá (BOG)</strong>
+                            &nbsp;·&nbsp; 15 Mar 2026 &nbsp;·&nbsp; 1 Adulto
+                        </p>
+                    </div>
+                    <div class="results-actions">
+                        <select class="sort-select" id="sort-select">
+                            <option value="price-desc" selected>Precio: Mayor a menor</option>
+                            <option value="price-asc">Precio: Menor a mayor</option>
+                            <option value="time-asc">Salida más temprana</option>
+                            <option value="duration">Duración más corta</option>
+                        </select>
+                        <button class="filter-btn">
+                            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+                            </svg>
+                            Filtros
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Flight result cards -->
+                <div class="flight-results" id="flight-results">
+
+                    <!-- Card 1: Morning — SELECTED -->
+                    <div class="result-card selected" data-flight="AV9447" id="card-1" data-price="185000"
+                        data-dep="0800" data-dur="75">
+                        <div class="rc-left-bar"></div>
+                        <div class="rc-badge selected-badge">✓ Seleccionado</div>
+
+                        <div class="rc-airline">
+                            <svg viewBox="0 0 52 40" width="28" height="22" fill="none">
+                                <path d="M8 34C14 22 22 14 30 10L46 4L42 14C36 16 28 22 22 30Z" fill="#E1251B" />
+                                <path d="M6 36L22 30L20 36Z" fill="rgba(225,37,27,.4)" />
+                            </svg>
+                            <div>
+                                <span class="rc-airline-name">AeroVia</span>
+                                <span class="rc-flight-num">AV 9447</span>
+                            </div>
+                        </div>
+
+                        <div class="rc-route">
+                            <div class="rc-endpoint">
+                                <span class="rc-time">08:00</span>
+                                <span class="rc-code">CUC</span>
+                            </div>
+                            <div class="rc-mid">
+                                <span class="rc-duration">1h 15m</span>
+                                <div class="rc-line-wrap">
+                                    <div class="rc-line">
+                                        <svg viewBox="0 0 100 12" width="80" height="12">
+                                            <line x1="0" y1="6" x2="88" y2="6" stroke="#E0E0E0" stroke-width="1.5" />
+                                            <circle cx="0" cy="6" r="3" fill="#E1251B" />
+                                            <path d="M80 2L92 6L80 10Z" fill="#E1251B" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span class="rc-stops direct">Directo</span>
+                            </div>
+                            <div class="rc-endpoint">
+                                <span class="rc-time">09:15</span>
+                                <span class="rc-code">BOG</span>
+                            </div>
+                        </div>
+
+                        <div class="rc-tags">
+                            <span class="rc-tag">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" />
+                                    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                                </svg>
+                                Equipaje incluido
+                            </span>
+                            <span class="rc-tag">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                </svg>
+                                Tarifa Flex
+                            </span>
+                        </div>
+
+                        <div class="rc-price-col">
+                            <span class="rc-price-label">Por persona</span>
+                            <span class="rc-price">$185.000</span>
+                            <span class="rc-currency">COP</span>
+                            <button class="rc-select-btn selected-btn" onclick="selectFlight(1)">✓ Seleccionado</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Afternoon -->
+                    <div class="result-card" data-flight="AV9453" id="card-2" data-price="210000" data-dep="1430"
+                        data-dur="80">
+                        <div class="rc-left-bar"></div>
+
+                        <div class="rc-airline">
+                            <svg viewBox="0 0 52 40" width="28" height="22" fill="none">
+                                <path d="M8 34C14 22 22 14 30 10L46 4L42 14C36 16 28 22 22 30Z" fill="#E1251B" />
+                            </svg>
+                            <div>
+                                <span class="rc-airline-name">AeroVia</span>
+                                <span class="rc-flight-num">AV 9453</span>
+                            </div>
+                        </div>
+
+                        <div class="rc-route">
+                            <div class="rc-endpoint">
+                                <span class="rc-time">14:30</span>
+                                <span class="rc-code">CUC</span>
+                            </div>
+                            <div class="rc-mid">
+                                <span class="rc-duration">1h 20m</span>
+                                <div class="rc-line-wrap">
+                                    <div class="rc-line">
+                                        <svg viewBox="0 0 100 12" width="80" height="12">
+                                            <line x1="0" y1="6" x2="88" y2="6" stroke="#E0E0E0" stroke-width="1.5" />
+                                            <circle cx="0" cy="6" r="3" fill="#E1251B" />
+                                            <path d="M80 2L92 6L80 10Z" fill="#E1251B" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span class="rc-stops direct">Directo</span>
+                            </div>
+                            <div class="rc-endpoint">
+                                <span class="rc-time">15:50</span>
+                                <span class="rc-code">BOG</span>
+                            </div>
+                        </div>
+
+                        <div class="rc-tags">
+                            <span class="rc-tag">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" />
+                                    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                                </svg>
+                                Solo maleta de mano
+                            </span>
+                        </div>
+
+                        <div class="rc-price-col">
+                            <span class="rc-price-label">Por persona</span>
+                            <span class="rc-price">$210.000</span>
+                            <span class="rc-currency">COP</span>
+                            <button class="rc-select-btn" onclick="selectFlight(2)">Seleccionar</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Night — Best price badge -->
+                    <div class="result-card" data-flight="AV9461" id="card-3" data-price="155000" data-dep="2100"
+                        data-dur="75">
+                        <div class="rc-left-bar"></div>
+                        <div class="rc-badge best-price-badge">🏷 Mejor precio</div>
+
+                        <div class="rc-airline">
+                            <svg viewBox="0 0 52 40" width="28" height="22" fill="none">
+                                <path d="M8 34C14 22 22 14 30 10L46 4L42 14C36 16 28 22 22 30Z" fill="#E1251B" />
+                            </svg>
+                            <div>
+                                <span class="rc-airline-name">AeroVia</span>
+                                <span class="rc-flight-num">AV 9461</span>
+                            </div>
+                        </div>
+
+                        <div class="rc-route">
+                            <div class="rc-endpoint">
+                                <span class="rc-time">21:00</span>
+                                <span class="rc-code">CUC</span>
+                            </div>
+                            <div class="rc-mid">
+                                <span class="rc-duration">1h 15m</span>
+                                <div class="rc-line-wrap">
+                                    <div class="rc-line">
+                                        <svg viewBox="0 0 100 12" width="80" height="12">
+                                            <line x1="0" y1="6" x2="88" y2="6" stroke="#E0E0E0" stroke-width="1.5" />
+                                            <circle cx="0" cy="6" r="3" fill="#E1251B" />
+                                            <path d="M80 2L92 6L80 10Z" fill="#E1251B" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span class="rc-stops direct">Directo</span>
+                            </div>
+                            <div class="rc-endpoint">
+                                <span class="rc-time">22:15</span>
+                                <span class="rc-code">BOG</span>
+                            </div>
+                        </div>
+
+                        <div class="rc-tags">
+                            <span class="rc-tag">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" />
+                                    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                                </svg>
+                                Solo maleta de mano
+                            </span>
+                        </div>
+
+                        <div class="rc-price-col">
+                            <span class="rc-price-label">Por persona</span>
+                            <span class="rc-price highlight-price">$155.000</span>
+                            <span class="rc-currency">COP</span>
+                            <button class="rc-select-btn" onclick="selectFlight(3)">Seleccionar</button>
+                        </div>
+                    </div>
+
+                </div><!-- /flight-results -->
+            </div>
+        </section>
+
+        <!-- =====================================================================
+     OFERTAS INCREÍBLES
+===================================================================== -->
+        <section class="promos-section" id="ofertas">
+            <div class="promos-inner">
+                <div class="section-hdr">
+                    <h2>Ofertas Increíbles</h2>
+                    <a href="#" class="link-all">Ver todas →</a>
+                </div>
+                <div class="cards-grid">
+
+                    <article class="dest-card">
+                        <div class="card-img" style="background:linear-gradient(135deg,#0097A7,#4DD0E1);">
+                            <img src="assets/cancun.png" alt="Cancún" onerror="this.style.display='none'">
+                            <div class="card-img-overlay"></div>
+                            <span class="card-tag oferta-tag">🏷 OFERTA DEL DÍA</span>
+                            <div class="card-city-overlay">
+                                <span class="ov-city">CANCÚN</span>
+                                <span class="ov-country">México · CUN</span>
+                            </div>
+                        </div>
+                        <div class="card-foot">
+                            <div class="card-price-blk">
+                                <span class="card-from">Desde</span>
+                                <span class="card-price">$1.200.000</span>
+                                <span class="card-cur">COP</span>
+                            </div>
+                            <a href="#" class="btn-card-offer">Ver Oferta</a>
+                        </div>
+                    </article>
+
+                    <article class="dest-card">
+                        <div class="card-img" style="background:linear-gradient(135deg,#B71C1C,#D32F2F);">
+                            <img src="assets/newyork.png" alt="Madrid" onerror="this.style.display='none'">
+                            <div class="card-img-overlay"></div>
+                            <span class="card-tag oferta-tag">🏷 OFERTA DEL DÍA</span>
+                            <div class="card-city-overlay">
+                                <span class="ov-city">MADRID</span>
+                                <span class="ov-country">España · MAD</span>
+                            </div>
+                        </div>
+                        <div class="card-foot">
+                            <div class="card-price-blk">
+                                <span class="card-from">Desde</span>
+                                <span class="card-price">$2.650.000</span>
+                                <span class="card-cur">COP</span>
+                            </div>
+                            <a href="#" class="btn-card-offer">Ver Oferta</a>
+                        </div>
+                    </article>
+
+                    <article class="dest-card">
+                        <div class="card-img" style="background:linear-gradient(135deg,#F57F17,#FFA726);">
+                            <img src="assets/hero_bg.png" alt="Cartagena" onerror="this.style.display='none'">
+                            <div class="card-img-overlay"></div>
+                            <span class="card-tag oferta-tag">🏷 OFERTA DEL DÍA</span>
+                            <div class="card-city-overlay">
+                                <span class="ov-city">CARTAGENA</span>
+                                <span class="ov-country">Colombia · CTG</span>
+                            </div>
+                        </div>
+                        <div class="card-foot">
+                            <div class="card-price-blk">
+                                <span class="card-from">Desde</span>
+                                <span class="card-price">$380.000</span>
+                                <span class="card-cur">COP</span>
+                            </div>
+                            <a href="#" class="btn-card-offer">Ver Oferta</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =====================================================================
+     CHATBOT – VIANCA
+===================================================================== -->
+    <div class="chatbot-dock" id="chatbot-dock">
+
+        <div class="chat-win" id="chat-win">
+            <div class="chat-hdr">
+                <div class="chat-agent">
+                    <div class="chat-av-wrap">
+                        <img src="assets/avatar.png" alt="Vianca" class="chat-av" id="chat-av">
+                        <span class="av-dot"></span>
+                    </div>
+                    <div>
+                        <div class="chat-name">VIANCA</div>
+                        <div class="chat-sub">Tu Asistente Virtual · En línea</div>
+                    </div>
+                </div>
+                <div class="chat-hdr-btns">
+                    <button class="chdr-btn" id="min-btn">
+                        <svg viewBox="0 0 24 24" width="15" height="15" stroke="white" stroke-width="2.5" fill="none">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                    </button>
+                    <button class="chdr-btn" id="close-btn">
+                        <svg viewBox="0 0 24 24" width="15" height="15" stroke="white" stroke-width="2.5" fill="none">
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-body" id="chat-body">
+                <!-- Greeting -->
+                <div class="msg-wrap bot-wrap">
+                    <img src="assets/avatar.png" alt="" class="msg-av">
+                    <div class="bubble bot-bubble">
+                        ¡Hola! Soy Vianca, tu asistente virtual. ¿En qué puedo ayudarte hoy con tu viaje?
+                    </div>
+                </div>
+
+                <!-- User initiates search -->
+                <div class="msg-wrap user-wrap">
+                    <div class="bubble user-bubble">Quiero vuelos de Cúcuta a Bogotá para el 15 de marzo</div>
+                </div>
+
+                <!-- Bot responds with flights found -->
+                <div class="msg-wrap bot-wrap">
+                    <img src="assets/avatar.png" alt="" class="msg-av">
+                    <div class="bubble bot-bubble">
+                        ¡Excelente elección! He encontrado <strong>3 vuelos disponibles</strong> para tu ruta
+                        <strong>Cúcuta → Bogotá</strong>. ¿Cuál prefieres?
+                    </div>
+                </div>
+
+                <!-- Time-based quick reply pills -->
+                <div class="time-pills-wrap">
+                    <button class="time-pill morning" data-price="185">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="#F59E0B">
+                            <path
+                                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1z" />
+                        </svg>
+                        Vuelo Mañana ($185k)
+                    </button>
+                    <button class="time-pill afternoon" data-price="210">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="#FB923C">
+                            <path
+                                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1z" />
+                        </svg>
+                        Vuelo Tarde ($210k)
+                    </button>
+                    <button class="time-pill night" data-price="155">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="#6366F1">
+                            <path
+                                d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                        </svg>
+                        Vuelo Noche ($155k)
+                    </button>
+                </div>
+
+                <!-- Secondary pills -->
+                <div class="qr-pills-row secondary-pills">
+                    <button class="qr-pill">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" />
+                            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                        </svg>
+                        Ver equipaje incluido
+                    </button>
+                    <button class="qr-pill">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                        Cambiar destino
+                    </button>
+                    <button class="qr-pill">
+                        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                            <path
+                                d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+                        </svg>
+                        Hablar con un asesor
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-input-wrap">
+                <input type="text" id="chat-text" class="chat-inp" placeholder="Escribe tu mensaje aquí...">
+                <button class="chat-send" id="chat-send">
+                    <svg viewBox="0 0 24 24" width="15" height="15" stroke="white" stroke-width="2.5" fill="none">
+                        <line x1="22" y1="2" x2="11" y2="13" />
+                        <polygon points="22 2 15 22 11 13 2 9 22 2" fill="white" stroke="none" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <button class="chat-fab" id="chat-fab">
+            <img src="assets/avatar.png" alt="Vianca" class="fab-img">
+            <span class="fab-dot" id="fab-dot">3</span>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

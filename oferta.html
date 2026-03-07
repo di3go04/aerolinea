@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta – AeroVia</title>
+    <meta name="description" content="Detalles de la oferta del día en AeroVia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #E1251B;
+            --red-d: #BB1A12;
+            --red-l: #FF3B2E;
+            --red-glow: rgba(225, 37, 27, .25);
+            --g100: #F0F0F0;
+            --g200: #E2E2E2;
+            --g400: #9E9E9E;
+            --g600: #555;
+            --g800: #1A1A1A;
+            --white: #fff;
+            --sh-sm: 0 2px 8px rgba(0, 0, 0, .08);
+            --sh-md: 0 8px 26px rgba(0, 0, 0, .14);
+            --sh-lg: 0 18px 48px rgba(0, 0, 0, .22);
+            --r-sm: 6px;
+            --r-md: 12px;
+            --r-lg: 20px;
+            --r-pill: 999px;
+            --font: 'Inter', system-ui, sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font);
+            background: #F5F5F5;
+            color: var(--g800);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--red);
+            box-shadow: 0 3px 18px rgba(0, 0, 0, .28);
+            padding: 0 28px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: #fff;
+            font-size: 1.38rem;
+            font-weight: 800;
+            font-style: italic;
+        }
+
+        .nav-logo svg {
+            width: 34px;
+            height: 26px;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(255, 255, 255, .18);
+            border: none;
+            color: #fff;
+            font-size: .82rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            padding: 7px 16px;
+            border-radius: var(--r-pill);
+            cursor: pointer;
+            transition: background .18s;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, .28);
+        }
+
+        /* ── HERO ── */
+        .offer-hero {
+            position: relative;
+            height: 58vh;
+            min-height: 340px;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        .hero-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s ease;
+        }
+
+        .offer-hero:hover .hero-img {
+            transform: scale(1.03);
+        }
+
+        .hero-grad {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, .78) 0%, rgba(0, 0, 0, .2) 55%, transparent 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 32px 36px;
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .htag {
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .07em;
+            padding: 4px 12px;
+            border-radius: var(--r-pill);
+        }
+
+        .htag-oferta {
+            background: #FFCA28;
+            color: #7B4F00;
+        }
+
+        .htag-directo {
+            background: rgba(255, 255, 255, .25);
+            color: #fff;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-city {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, .5);
+        }
+
+        .hero-country {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, .75);
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .hero-price-blk {
+            text-align: right;
+        }
+
+        .hp-label {
+            font-size: .75rem;
+            color: rgba(255, 255, 255, .65);
+            font-weight: 500;
+        }
+
+        .hp-price {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .hp-cur {
+            font-size: .85rem;
+            color: rgba(255, 255, 255, .65);
+            font-weight: 500;
+        }
+
+        .hp-save {
+            margin-top: 6px;
+            background: var(--red);
+            color: #fff;
+            font-size: .72rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: var(--r-pill);
+            display: inline-block;
+        }
+
+        /* ── MAIN ── */
+        .page-wrap {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 28px;
+        }
+
+        /* ── LEFT COL ── */
+        .section-card {
+            background: #fff;
+            border-radius: var(--r-lg);
+            box-shadow: var(--sh-sm);
+            padding: 26px 28px;
+            margin-bottom: 20px;
+        }
+
+        .sc-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .sc-title svg {
+            flex-shrink: 0;
+        }
+
+        /* Flights table */
+        .flights-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .flights-table th {
+            font-size: .65rem;
+            letter-spacing: .1em;
+            color: var(--g400);
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: left;
+            padding: 0 12px 10px;
+        }
+
+        .flights-table td {
+            padding: 14px 12px;
+            font-size: .9rem;
+            font-weight: 500;
+            color: var(--g800);
+            border-top: 1px solid var(--g100);
+        }
+
+        .ft-badge {
+            display: inline-block;
+            padding: 3px 9px;
+            border-radius: var(--r-pill);
+            font-size: .68rem;
+            font-weight: 700;
+        }
+
+        .ft-directo {
+            background: rgba(56, 142, 60, .12);
+            color: #388E3C;
+        }
+
+        .ft-price {
+            font-size: 1rem;
+            font-weight: 900;
+            color: var(--red);
+        }
+
+        .ft-select {
+            background: var(--red);
+            color: #fff;
+            border: none;
+            font-size: .76rem;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: var(--r-pill);
+            cursor: pointer;
+            transition: background .18s;
+            white-space: nowrap;
+        }
+
+        .ft-select:hover {
+            background: var(--red-d);
+        }
+
+        /* What's included */
+        .includes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .inc-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            padding: 12px;
+            border-radius: var(--r-md);
+            background: var(--g100);
+        }
+
+        .inc-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(225, 37, 27, .1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .inc-text strong {
+            display: block;
+            font-size: .85rem;
+            font-weight: 700;
+            color: var(--g800);
+        }
+
+        .inc-text span {
+            font-size: .75rem;
+            color: var(--g400);
+        }
+
+        /* Destination info */
+        .info-para {
+            font-size: .9rem;
+            line-height: 1.7;
+            color: var(--g600);
+            margin-bottom: 14px;
+        }
+
+        .tips-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .tips-list li {
+            display: flex;
+            gap: 10px;
+            font-size: .87rem;
+            align-items: flex-start;
+            color: var(--g600);
+        }
+
+        .tips-list .tip-icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            line-height: 1.4;
+        }
+
+        /* ── RIGHT COL ── */
+        .sticky-box {
+            position: sticky;
+            top: 80px;
+        }
+
+        .book-card {
+            background: #fff;
+            border-radius: var(--r-lg);
+            box-shadow: var(--sh-md);
+            overflow: hidden;
+            border: 2px solid var(--red);
+        }
+
+        .bc-hdr {
+            background: linear-gradient(135deg, var(--red-d), var(--red));
+            padding: 18px 22px;
+        }
+
+        .bc-hdr-title {
+            color: #fff;
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .bc-price-big {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .bc-price-note {
+            color: rgba(255, 255, 255, .7);
+            font-size: .72rem;
+            margin-top: 3px;
+        }
+
+        .bc-body {
+            padding: 20px 22px;
+        }
+
+        .bc-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 9px 0;
+            border-bottom: 1px solid var(--g100);
+            font-size: .85rem;
+        }
+
+        .bc-row:last-of-type {
+            border-bottom: none;
+        }
+
+        .bc-lbl {
+            color: var(--g400);
+            font-weight: 500;
+        }
+
+        .bc-val {
+            font-weight: 700;
+            color: var(--g800);
+        }
+
+        .bc-val.red {
+            color: var(--red);
+        }
+
+        .bc-cta {
+            display: block;
+            width: 100%;
+            margin-top: 18px;
+            background: linear-gradient(150deg, var(--red-l), var(--red), var(--red-d));
+            color: #fff;
+            border: none;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: .07em;
+            padding: 15px;
+            border-radius: var(--r-md);
+            cursor: pointer;
+            transition: all .22s;
+            box-shadow: 0 6px 20px var(--red-glow);
+        }
+
+        .bc-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px var(--red-glow);
+        }
+
+        .bc-cta:active {
+            transform: scale(.98);
+        }
+
+        .bc-note {
+            font-size: .72rem;
+            color: var(--g400);
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .guarantee {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: var(--r-md);
+            background: rgba(56, 142, 60, .08);
+            border: 1px solid rgba(56, 142, 60, .2);
+        }
+
+        .guarantee span {
+            font-size: .78rem;
+            color: #388E3C;
+            font-weight: 600;
+        }
+
+        /* Timer */
+        .offer-timer {
+            background: rgba(225, 37, 27, .06);
+            border: 1px solid rgba(225, 37, 27, .2);
+            border-radius: var(--r-md);
+            padding: 12px 14px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timer-label {
+            font-size: .74rem;
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        .timer-val {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--red);
+            letter-spacing: .05em;
+        }
+
+        .timer-sub {
+            font-size: .68rem;
+            color: var(--g400);
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-radius: var(--r-lg);
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .gallery-main {
+            background: var(--g200);
+        }
+
+        .gallery-side {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .gallery-side>div {
+            background: var(--g200);
+        }
+
+        .gallery img,
+        .gallery-side>div,
+        .gallery-main {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        @media(max-width:860px) {
+            .page-wrap {
+                grid-template-columns: 1fr;
+            }
+
+            .sticky-box {
+                position: static;
+            }
+
+            .hero-city {
+                font-size: 2rem;
+            }
+
+            .includes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:520px) {
+            .hero-content {
+                padding: 20px;
+            }
+
+            .hero-city {
+                font-size: 1.6rem;
+            }
+
+            .hp-price {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <svg viewBox="0 0 52 40" fill="none">
+                <path d="M8 34C14 22 22 14 30 10L46 4L42 14C36 16 28 22 22 30Z" fill="white" />
+                <path d="M6 36L22 30L20 36Z" fill="rgba(255,255,255,.5)" />
+            </svg>
+            AeroVia
+        </a>
+        <button class="back-btn" onclick="history.back()">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="white" stroke-width="2.5">
+                <line x1="19" y1="12" x2="5" y2="12" />
+                <polyline points="12 5 5 12 12 19" />
+            </svg>
+            Volver
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <div class="offer-hero" id="offer-hero">
+        <img class="hero-img" id="hero-img" src="" alt="">
+        <div class="hero-grad"></div>
+        <div class="hero-content">
+            <div>
+                <div class="hero-tags">
+                    <span class="htag htag-oferta">🏷 OFERTA DEL DÍA</span>
+                    <span class="htag htag-directo" id="hero-badge">✈ Directo</span>
+                </div>
+                <div class="hero-city" id="hero-city">—</div>
+                <div class="hero-country" id="hero-country">—</div>
+            </div>
+            <div class="hero-price-blk">
+                <div class="hp-label">Desde</div>
+                <div class="hp-price" id="hero-price">—</div>
+                <div class="hp-cur" id="hero-cur">COP · por persona</div>
+                <span class="hp-save" id="hero-save">Ahorra hasta 40%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="page-wrap" id="page-wrap">
+
+        <!-- LEFT -->
+        <div>
+            <!-- Flights -->
+            <div class="section-card">
+                <div class="sc-title">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="#E1251B">
+                        <path
+                            d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+                    </svg>
+                    Vuelos Disponibles
+                </div>
+                <table class="flights-table">
+                    <thead>
+                        <tr>
+                            <th>Vuelo</th>
+                            <th>Salida</th>
+                            <th>Llegada</th>
+                            <th>Duración</th>
+                            <th>Tipo</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="flights-body"></tbody>
+                </table>
+            </div>
+
+            <!-- Includes -->
+            <div class="section-card">
+                <div class="sc-title">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="#E1251B">
+                        <path d="M9 11l3 3L22 4" />
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    ¿Qué incluye la oferta?
+                </div>
+                <div class="includes-grid" id="includes-grid"></div>
+            </div>
+
+            <!-- Destination info -->
+            <div class="section-card">
+                <div class="sc-title">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="#E1251B">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                    Sobre el destino
+                </div>
+                <p class="info-para" id="dest-desc">—</p>
+                <ul class="tips-list" id="tips-list"></ul>
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="sticky-box">
+            <div class="offer-timer">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#E1251B" stroke-width="2">
+                    <circle cx="12" cy="12" r="9" />
+                    <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <div>
+                    <div class="timer-label">¡Oferta expira en!</div>
+                    <div class="timer-val" id="timer">23:58:42</div>
+                    <div class="timer-sub">Quedan pocas plazas</div>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="bc-hdr">
+                    <div class="bc-hdr-title">🏷 Oferta del Día</div>
+                    <div class="bc-price-big" id="bc-price">—</div>
+                    <div class="bc-price-note">COP · por persona · impuestos incluidos</div>
+                </div>
+                <div class="bc-body">
+                    <div class="bc-row"><span class="bc-lbl">Destino</span><span class="bc-val" id="bc-dest">—</span>
+                    </div>
+                    <div class="bc-row"><span class="bc-lbl">Tipo de vuelo</span><span class="bc-val"
+                            id="bc-type">Directo</span></div>
+                    <div class="bc-row"><span class="bc-lbl">Equipaje de mano</span><span class="bc-val">Incluido
+                            ✅</span></div>
+                    <div class="bc-row"><span class="bc-lbl">Cambio de fecha</span><span class="bc-val">+$50.000
+                            COP</span></div>
+                    <div class="bc-row"><span class="bc-lbl">Precio normal</span><span class="bc-val"><s
+                                id="bc-normal">—</s></span></div>
+                    <div class="bc-row"><span class="bc-lbl">Precio oferta</span><span class="bc-val red"
+                            id="bc-offer">—</span></div>
+
+                    <button class="bc-cta" id="bc-cta-btn">
+                        <span id="bc-cta-text">RESERVAR AHORA</span>
+                    </button>
+                    <p class="bc-note">Sin costos ocultos · Pago 100% seguro</p>
+
+                    <div class="guarantee">
+                        <span style="font-size:1.2rem;">🔒</span>
+                        <span>Mejor precio garantizado. Si encuentras uno más barato te devolvemos la diferencia.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* ── DESTINATION DATA ── */
+        const OFFERS = {
+            cancun: {
+                city: 'Cancún', country: 'México 🇲🇽', code: 'CUN', price: 1200000, normalPrice: 1980000, save: '39%',
+                badge: '✈ Directo',
+                bgColor: 'linear-gradient(135deg,#0097A7,#00BCD4)',
+                description: 'Cancún es el destino de playa más vibrante del Caribe mexicano. Sus aguas turquesas, arrecifes de coral y zona hotelera de clase mundial lo convierten en el lugar perfecto para escapar y relajarte.',
+                tips: ['🌊 Visita la zona de arrecifes de Cozumel', '🍹 Explora el nightlife de la Zona Hotelera', '🏛 Excursión a las ruinas mayas de Chichén Itzá', '🐠 Snorkeling en el Parque Nizuc'],
+                flights: [
+                    { code: 'AV 6214', dep: '06:30', arr: '10:45', dur: '4h 15m', stops: 'Directo', price: 1200000 },
+                    { code: 'AV 6218', dep: '12:00', arr: '16:20', dur: '4h 20m', stops: 'Directo', price: 1350000 },
+                    { code: 'AV 6222', dep: '20:30', arr: '00:50', dur: '4h 20m', stops: 'Directo', price: 1080000 },
+                ],
+                includes: ['Equipaje de mano (10 kg)', 'Snack a bordo', 'Entretenimiento en vuelo', 'Seguro de viaje básico'],
+            },
+            madrid: {
+                city: 'Madrid', country: 'España 🇪🇸', code: 'MAD', price: 2650000, normalPrice: 3800000, save: '30%',
+                badge: '✈ Directo',
+                bgColor: 'linear-gradient(135deg,#C62828,#E53935)',
+                description: 'Madrid, la capital de España, es una ciudad que combina siglos de historia con una vibrante vida moderna. Desde el Museo del Prado hasta el bullicio de la Gran Vía, cada rincón tiene algo único que ofrecer.',
+                tips: ['🎨 Visita el Museo del Prado y el Reina Sofía', '🥘 Prueba la auténtica paella y los tapas', '⚽ Asiste a un partido del Real Madrid', '🌳 Pasea por el Parque del Retiro'],
+                flights: [
+                    { code: 'AV 8810', dep: '22:00', arr: '14:30+1', dur: '10h 30m', stops: 'Directo', price: 2650000 },
+                    { code: 'AV 8812', dep: '08:00', arr: '00:45+1', dur: '10h 45m', stops: '1 escala', price: 2200000 },
+                ],
+                includes: ['Maleta en bodega 23 kg', 'Comida completa a bordo', 'Entretenimiento personal', 'Seguro de viaje internacional'],
+            },
+            cartagena: {
+                city: 'Cartagena', country: 'Colombia 🇨🇴', code: 'CTG', price: 380000, normalPrice: 620000, save: '38%',
+                badge: '✈ Directo',
+                bgColor: 'linear-gradient(135deg,#E65100,#FF8F00)',
+                description: 'Cartagena de Indias es la joya del Caribe colombiano. Su ciudad amurallada, declarada Patrimonio de la Humanidad por la UNESCO, sus playas cristalinas y su gastronomía costeña te enamorarán desde el primer momento.',
+                tips: ['🏰 Recorre la Ciudad Amurallada', '🏖 Visita las islas del Rosario', '🦞 Prueba la langosta fresca en Bocagrande', '🌅 Atardecer desde el Castillo de San Felipe'],
+                flights: [
+                    { code: 'AV 7401', dep: '07:00', arr: '08:15', dur: '1h 15m', stops: 'Directo', price: 380000 },
+                    { code: 'AV 7405', dep: '13:30', arr: '14:45', dur: '1h 15m', stops: 'Directo', price: 420000 },
+                    { code: 'AV 7409', dep: '18:00', arr: '19:15', dur: '1h 15m', stops: 'Directo', price: 345000 },
+                ],
+                includes: ['Equipaje de mano (10 kg)', 'Bebida a bordo', 'Wi-Fi gratuito', 'Seguro de viaje básico'],
+            },
+        };
+
+        /* ── UTIL ── */
+        function fmt(n) { return '$' + parseInt(n).toLocaleString('es-CO') + ' COP'; }
+
+        /* ── READ PARAM ── */
+        const params = new URLSearchParams(window.location.search);
+        const destKey = (params.get('dest') || 'cancun').toLowerCase();
+        const offer = OFFERS[destKey] || OFFERS.cancun;
+
+        /* ── APPLY DATA ── */
+        document.title = `${offer.city} – Oferta AeroVia`;
+        document.getElementById('hero-city').textContent = offer.city;
+        document.getElementById('hero-country').textContent = offer.country;
+        document.getElementById('hero-price').textContent = fmt(offer.price);
+        document.getElementById('hero-badge').textContent = offer.badge;
+        document.getElementById('hero-save').textContent = `Ahorra hasta ${offer.save}`;
+
+        // Hero gradient background
+        const heroEl = document.getElementById('offer-hero');
+        heroEl.style.background = offer.bgColor;
+
+        // Sidebar
+        document.getElementById('bc-price').textContent = fmt(offer.price);
+        document.getElementById('bc-dest').textContent = `${offer.city} (${offer.code})`;
+        document.getElementById('bc-type').textContent = offer.badge.replace('✈ ', '');
+        document.getElementById('bc-normal').textContent = fmt(offer.normalPrice);
+        document.getElementById('bc-offer').textContent = fmt(offer.price);
+
+        // Flights table
+        const tbody = document.getElementById('flights-body');
+        offer.flights.forEach(f => {
+            const cheapest = f.price === Math.min(...offer.flights.map(x => x.price));
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+    <td><strong>${f.code}</strong></td>
+    <td><strong>${f.dep}</strong></td>
+    <td><strong>${f.arr}</strong></td>
+    <td style="color:#555;">${f.dur}</td>
+    <td><span class="ft-badge ft-directo">${f.stops}</span></td>
+    <td><span class="ft-price">${fmt(f.price)}</span>${cheapest ? '<br><small style="color:#388E3C;font-size:.65rem;font-weight:700;">⭐ Mejor precio</small>' : ''}</td>
+    <td><button class="ft-select" onclick="reserve('${f.code}','${f.dep}',${f.price})">Reservar</button></td>
+  `;
+            tbody.appendChild(tr);
+        });
+
+        // Includes grid
+        const includes = [
+            { icon: '🧳', label: 'Equipaje mano', sub: offer.includes[0] },
+            { icon: '🍽', label: 'A bordo', sub: offer.includes[1] || 'Snack incluido' },
+            { icon: '📱', label: 'Entretenimiento', sub: offer.includes[2] || 'Pantalla personal' },
+            { icon: '🔒', label: 'Seguro viaje', sub: offer.includes[3] || 'Cobertura básica' },
+            { icon: '💳', label: 'Sin recargos', sub: 'Todas las tarjetas' },
+            { icon: '♻️', label: 'Cambio fecha', sub: 'Con tarifa de cambio' },
+        ];
+        const grid = document.getElementById('includes-grid');
+        includes.forEach(inc => {
+            const div = document.createElement('div'); div.className = 'inc-item';
+            div.innerHTML = `<div class="inc-icon" style="font-size:1.1rem;">${inc.icon}</div><div class="inc-text"><strong>${inc.label}</strong><span>${inc.sub}</span></div>`;
+            grid.appendChild(div);
+        });
+
+        // Description & tips
+        document.getElementById('dest-desc').textContent = offer.description;
+        const ul = document.getElementById('tips-list');
+        offer.tips.forEach(t => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span class="tip-icon">${t.split(' ')[0]}</span><span>${t.split(' ').slice(1).join(' ')}</span>`;
+            ul.appendChild(li);
+        });
+
+        /* ── COUNTDOWN TIMER ── */
+        let h = 23, m = 58, s = 42;
+        const timerEl = document.getElementById('timer');
+        function tick() {
+            if (--s < 0) { s = 59; if (--m < 0) { m = 59; if (--h < 0) h = 23; } }
+            timerEl.textContent = String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+        }
+        setInterval(tick, 1000);
+
+        /* ── RESERVE CTA ── */
+        function reserve(code, dep, price) {
+            const btn = document.getElementById('bc-cta-btn');
+            const txt = document.getElementById('bc-cta-text');
+            txt.textContent = '⏳ Procesando...';
+            btn.disabled = true;
+            setTimeout(() => {
+                const refCode = 'AV-' + Math.floor(100000 + Math.random() * 900000);
+                txt.innerHTML = `✅ Reserva iniciada · ${refCode}`;
+                btn.style.background = '#388E3C';
+                btn.disabled = false;
+                // Show confirmation modal
+                showModal(code, dep, price, refCode);
+            }, 1600);
+        }
+        document.getElementById('bc-cta-btn').addEventListener('click', () => {
+            const cheapest = offer.flights.reduce((a, b) => a.price < b.price ? a : b);
+            reserve(cheapest.code, cheapest.dep, cheapest.price);
+        });
+
+        /* ── MODAL ── */
+        function showModal(code, dep, price, refCode) {
+            const modal = document.createElement('div');
+            modal.style.cssText = `position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px);`;
+            modal.innerHTML = `
+    <div style="background:#fff;border-radius:20px;max-width:460px;width:100%;padding:36px;box-shadow:0 24px 64px rgba(0,0,0,.35);animation:mPop .3s cubic-bezier(.22,1,.36,1);">
+      <div style="text-align:center;margin-bottom:24px;">
+        <div style="font-size:3rem;margin-bottom:8px;">🎉</div>
+        <h2 style="font-size:1.4rem;font-weight:900;color:#1A1A1A;margin-bottom:6px;">¡Reserva exitosa!</h2>
+        <p style="color:#555;font-size:.9rem;">Tu código de reserva es:</p>
+        <div style="background:#FFF0F0;border:2px dashed #E1251B;border-radius:12px;padding:14px;margin:14px 0;">
+          <span style="font-size:1.6rem;font-weight:900;color:#E1251B;letter-spacing:.08em;">${refCode}</span>
+        </div>
+      </div>
+      <div style="background:#F5F5F5;border-radius:12px;padding:16px;margin-bottom:20px;">
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #E2E2E2;font-size:.88rem;"><span style="color:#9E9E9E;">Destino</span><strong>${offer.city} (${offer.code})</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #E2E2E2;font-size:.88rem;"><span style="color:#9E9E9E;">Vuelo</span><strong>${code} · ${dep}</strong></div>
+        <div style="display:flex;justify-content:space-between;padding:7px 0;font-size:.88rem;"><span style="color:#9E9E9E;">Total</span><strong style="color:#E1251B;">${fmt(price)}</strong></div>
+      </div>
+      <p style="font-size:.78rem;color:#9E9E9E;text-align:center;margin-bottom:18px;">Recibirás la confirmación en tu correo electrónico en los próximos 5 minutos.</p>
+      <button onclick="this.closest('[style]').remove()" style="width:100%;background:#E1251B;color:#fff;border:none;padding:13px;border-radius:99px;font-size:.92rem;font-weight:800;cursor:pointer;font-family:inherit;">Cerrar</button>
+      <button onclick="window.location.href='index.html'" style="width:100%;background:transparent;color:#E1251B;border:2px solid #E1251B;padding:11px;border-radius:99px;font-size:.88rem;font-weight:700;cursor:pointer;font-family:inherit;margin-top:10px;">Volver al inicio</button>
+    </div>`;
+            const s = document.createElement('style');
+            s.textContent = '@keyframes mPop{from{opacity:0;transform:scale(.88) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}';
+            document.head.appendChild(s);
+            document.body.appendChild(modal);
+            modal.addEventListener('click', e => { if (e.target === modal) modal.remove(); });
+        }
+    </script>
+</body>
+
+</html>
